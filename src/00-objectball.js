@@ -142,13 +142,20 @@ function homeTeamName() {
 // 	}
 // }
 
-function numPointsScored(target) {
-	if (typeof target === "object") {
-		const keysArray = Object.keys(target);
-		for (const key in target) {
-			numPointsScored(target[key]);
+function numPointsScored(playerName) {
+	for (const team in gameObject()) {
+		if (gameObject()[team].players.hasOwnProperty(playerName)) {
+			return gameObject()[team].players[playerName].points;
 		}
-	} else {
-		console.log(target);
 	}
+	return null;
+}
+
+function shoeSize(playerName) {
+	for (const team in gameObject()) {
+		if (gameObject()[team].players.hasOwnProperty(playerName)) {
+			return gameObject()[team].players[playerName].shoe;
+		}
+	}
+	return null;
 }
