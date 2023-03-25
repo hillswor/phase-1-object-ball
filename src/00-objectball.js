@@ -159,3 +159,5 @@ function shoeSize(playerName) {
 	}
 	return null;
 }
+
+function teamColors(team) {}
